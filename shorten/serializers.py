@@ -6,3 +6,9 @@ class ServiceSerializer(ModelSerializer):
     class Meta:
         model = models.UrlModel
         fields = '__all__'
+
+
+class RequestSerializer(ModelSerializer):
+    class Meta:
+        model = models.UrlModel
+        fields = ('url')
