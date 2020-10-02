@@ -35,7 +35,7 @@ if DEV_ENV == 'DEVELOPMENT':
 else:
     DEBUG = False
     ALLOWED_HOSTS = ['*.ngoayuda.org']
-    CORS_ORIGIN_ALLOW_ALL = True
+    CORS_ORIGIN_ALLOW_ALL = False
     CORS_ORIGIN_WHITELIST = (
         'https:://tiny.ngoayuda.org/',
     )
