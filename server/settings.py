@@ -29,9 +29,16 @@ DEV_ENV = "DEVELOPMENT"
 if DEV_ENV == 'DEVELOPMENT':
     DEBUG = True
     ALLOWED_HOSTS = ['*']
+    CORS_ORIGIN_ALLOW_ALL = True
+
+
 else:
     DEBUG = False
     ALLOWED_HOSTS = ['*.ngoayuda.org']
+    CORS_ORIGIN_ALLOW_ALL = True
+    CORS_ORIGIN_WHITELIST = (
+        'https:://tiny.ngoayuda.org/',
+    )
 
 
 # Application definition
