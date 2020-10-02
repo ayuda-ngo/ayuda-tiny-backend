@@ -24,11 +24,15 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = getenv('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEV_ENV = os.environ.get('DEV_ENV')
+DEV_ENV = "DEVELOPMENT"
+if DEV_ENV == 'DEVELOPMENT':
+    DEBUG = True
+    ALLOWED_HOSTS = ['*']
+else:
+    DEBUG = False
+    ALLOWED_HOSTS = ['*.ngoayuda.org']
 
-ALLOWED_HOSTS = []
-
-CORS_ORIGIN_ALLOW_ALL = True
 
 # Application definition
 
