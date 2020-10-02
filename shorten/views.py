@@ -62,7 +62,8 @@ def redirect(request, slug):
     try:
         service = models.UrlModel.objects.get(slug=slug)
         url = service.url
-        return Response(data={'url': url}, status=status.HTTP_200_OK)
+        service_serializer = serializers.ServiceSerializer(service, many=False)
+        return Response(data={'success': True, 'data': service_serializer.data}, status=status.HTTP_200_OK)
 
     except Exception as e:
         return Response('/', status=status.HTTP_404_NOT_FOUND)

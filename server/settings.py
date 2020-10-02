@@ -25,13 +25,11 @@ SECRET_KEY = getenv('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEV_ENV = getenv('DEV_ENV')
-DEV_ENV = "DEVELOPMENT"
+
 if DEV_ENV == 'DEVELOPMENT':
     DEBUG = True
     ALLOWED_HOSTS = ['*']
     CORS_ORIGIN_ALLOW_ALL = True
-
-
 else:
     DEBUG = False
     ALLOWED_HOSTS = ['*.ngoayuda.org']
